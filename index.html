@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Website Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         html,
         body {
@@ -62,6 +64,61 @@
             margin: 20px;
         }
         
+        .product-carousel {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        
+        .product-carousel img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 560px; /* Set the maximum height for the product images */
+        }
+        
+        .slick-slide {
+            padding: 0 10px; /* Adjust the padding as needed */
+        }
+        
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 40px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slick-prev:hover,
+        .slick-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .slick-prev:before,
+        .slick-next:before {
+            font-family: 'Font Awesome 5 Free';
+            font-size: 40px;
+            line-height: 1;
+            opacity: 0.75;
+            color: #fff;
+        }
+        
+        .slick-prev {
+            left: 10px;
+        }
+        
+        .slick-next {
+            right: 10px;
+        }
+        
         footer {
             background-color: #333;
             color: #fff;
@@ -89,7 +146,25 @@
         
         <main>
             <h2>Welcome to Your Website!</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel eros ut metus faucibus ultricies a ac odio. Curabitur tristique, sapien at lobortis sagittis, ex lorem dignissim turpis, ac finibus ex ligula et turpis.</p>
+            
+            <div class="product-carousel">
+                <div>
+                    <img src="image1.jpg" alt="Product 1">
+                </div>
+                <div>
+                    <img src="image2.jpg" alt="Product 2">
+                </div>
+                <div>
+                    <img src="image3.jpg" alt="Product 3">
+                </div>
+                <div>
+                    <img src="path/to/product4.jpg" alt="Product 4">
+                </div>
+                <div>
+                    <img src="path/to/product5.jpg" alt="Product 5">
+                </div>
+                <!-- Add more product images as needed -->
+            </div>
         </main>
     </div>
     
@@ -98,5 +173,24 @@
             &copy; 2023 Your Website. All rights reserved.
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.product-carousel').slick({
+                dots: true, // Show dots navigation
+                infinite: true, // Loop the carousel
+                speed: 500, // Transition speed in milliseconds
+                slidesToShow: 3, // Number of slides to show at a time
+                slidesToScroll: 1, // Number of slides to scroll at a time
+                autoplay: true, // Auto-rotate the carousel
+                autoplaySpeed: 1000, // Delay between slides in milliseconds
+                infinite: true, // Scroll the carousel continuously
+                prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><i class="fas fa-angle-left"></i></button>',
+                nextArrow: '<button class="slick-next" aria-label="Next" type="button"><i class="fas fa-angle-right"></i></button>'
+            });
+        });
+    </script>
 </body>
 </html>
